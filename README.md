@@ -1,4 +1,4 @@
-# Practice Exam for RHCSA
+# Practice Tasks for RHCSA
 
 ### Perform the following tasks
 
