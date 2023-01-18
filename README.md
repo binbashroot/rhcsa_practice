@@ -1,9 +1,9 @@
 # Practice Tasks for RHCSA
 
-### Perform the following tasks
+NOTES:  
+Any files in a user's home directory must be owner/group of the user
 
-**Any files in a user's home directory must be owner/group of the user**
-
+# Perform the following tasks
 ### Task 1
 **Add the following repos to the system**
 > BaseOS 
