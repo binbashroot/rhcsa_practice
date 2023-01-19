@@ -20,6 +20,7 @@ Any files in a user's home directory must be owner/group of the user
 
 ### Task 2
 **Add the following repos to the system**
+**NOTE: REPLACE qnapbu.example.com with your local yum repo that is being served via httpd**
 > BaseOS 
 >> http://qnapbu.example.com/repo/BaseOS  
 
@@ -102,11 +103,11 @@ You will run the following command as your starting point:
 ### Task 10
 **Filesystem** 
 >Create and mount a filesystem using your primary disk  
->Filesystem must be 500MiB in size
->Filesystem must use an xfs filesytem
->Filesystem must be mounted on /mnt/task4
->Partition must be named task10
->The mount point must survive a reboot
+>Filesystem must be 500MiB in size  
+>Filesystem must use an xfs filesytem  
+>Filesystem must be mounted on /mnt/task4  
+>Partition must be named task10  
+>The mount point must survive a reboot  
 
 ### Task 11
 **Folder Permissions**
@@ -135,42 +136,54 @@ Add a three new partitions to your secondary disk
 ### Task 14
 **Copy Files**
 >Copy all the files in the /opt/test1 dirs to a directory called /opt/copied  
->>* Files in /opt/copied must be readable by everyone
->>* Files in /opt/copied must read/write by the owner
->>* Files in /opt/copied must be read/write by the group
->>* The directory must be owned by student   
->>* The directory must be owned by goodguys group
+>>Files in /opt/copied must be readable by everyone  
+>>Files in /opt/copied must read/write by the owner  
+>>Files in /opt/copied must be read/write by the group  
+>>The directory must be owned by student   
+>>The directory must be owned by goodguys group  
 
 ### Task 15
 **Move files**
->Move all the files in /opt/test2 to /opt/moved
->Permissions of all files should be owned by student
->All files must be in the student group
->Files should be read and writeable for user and read-only for group and world
->All users on the system should be able to list all files in the /opt/moved directory
+>Move all the files in /opt/test2 to /opt/moved  
+>Permissions of all files should be owned by student  
+>All files must be in the student group  
+>Files should be read and writeable for user and read-only for group and world  
+>All users on the system should be able to list all files in the /opt/moved directory  
 
 ### Task 16
 **Compressed Files**
->Create a compressed called test3.targz
->The file must contain of all the files from /opt/test3 
->The compressed file must reside in /tmp
->The file must use gzip compression
->The task must be completed in a single command
->Put the command you used in a script called /opt/scripts/task16.sh
+>Create a compressed called test3.targz  
+>The file must contain of all the files from /opt/test3   
+>The compressed file must reside in /tmp  
+>The file must use gzip compression  
+>The task must be completed in a single command  
+>Put the command you used in a script called /opt/scripts/task16.sh  
 
 ### Task 16
 **Find Files**
->Find all files owned by albert and copy them to a folder called
-/tmp/task17_files
+>Find all files owned by albert and copy them to a folder called /tmp/task17_files
 
 ### Task 17
-*
+**Chrony**
+>Configure servera.example.com to be a ntp client from serverb.example.com  
+>Validate time has been properly synced and write results to /tmp/time_validation.out
 
 ### Task 18
+**Logical volumes**
+>On serverb.example.com
+>>Using /dev/sdb do the following:
+>>>Create a 1G partition  
+>>>Create a 500M logical volume 500M that belongs to the rhcsavg volume group  
+>>>
 
+**Swap**
+>On serverb.example.com
+>>Create a 2G swap partition  
+>>Swap partition must persist across reboots  
+>>
 
 ## Task 18
-*
+
 ## Task 19
 **Mount static nfs share**
 > Mount the exported share from serverb.example.com to servera.example.com
@@ -180,7 +193,7 @@ Add a three new partitions to your secondary disk
 
 ## Task 20
 **Create autofs mount**
-> Exported mount: serverb.example.com:/homes
-> Configure automount so share from serverb.example.com is mounted on /home/albert whenever albert logs in
+>Exported mount: serverb.example.com:/homes
+>Configure automount so share from serverb.example.com is mounted on /home/albert whenever albert logs in
 
 
