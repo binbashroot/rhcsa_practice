@@ -5,6 +5,20 @@ Any files in a user's home directory must be owner/group of the user
 
 # Perform the following tasks
 ### Task 1
+
+**Change IP**
+>Change the IP address of servera to: **192.168.1.121**
+>This change must persist through reboots
+>
+**Change Hostname**
+>Change the hostname to: **servera.example.com**
+>This change must persist through reboots
+
+**SELinux**
+> Validate/Configure SELinux so it is enforced
+> Ensure SELinux enforcment is persistent across a reboot
+
+### Task 2
 **Add the following repos to the system**
 > BaseOS 
 >> http://qnapbu.example.com/repo/BaseOS  
@@ -12,11 +26,11 @@ Any files in a user's home directory must be owner/group of the user
 > AppStream  
 >> http://qnapbu.example.com/repo/AppStream  
 
-### Task 2
 **Install a web server**
-> Install the httpd package
+> Install the httpd package on servera.example.com
 > The web services must survive a reboot
-> Validate your installation using a web browser @ http://servera.examnple.com/
+> Validate your installation 
+
 
 ### Task 3
 **Filesystem** 
@@ -64,7 +78,7 @@ Any files in a user's home directory must be owner/group of the user
         loki
         thanos
         ultron
-
+>run the script and ensure it works and has created the users/groups
 ### Task 7
 **Create a text file**
 >The file must reside in /home/student  
@@ -150,13 +164,23 @@ Add a three new partitions to your secondary disk
 /tmp/task17_files
 
 ### Task 17
-**Change Hostname**
->Change the hostname to: **servera.example.com**
->This change must persist through reboots
+*
 
 ### Task 18
-**Change IP**
->Change the IP address to: **192.168.1.150**
->This change must persist through reboots
->
+
+
+## Task 18
+*
+## Task 19
+**Mount static nfs share**
+> Mount the exported share from serverb.example.com to servera.example.com
+> The mount point on servera.example.com should be /mnt/share
+> The mount point on servera.example.com should persist across reboots
+> The mount point should be read and writeable
+
+## Task 20
+**Create autofs mount**
+> Exported mount: serverb.example.com:/homes
+> Configure automount so share from serverb.example.com is mounted on /home/albert whenever albert logs in
+
 
