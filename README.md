@@ -80,6 +80,7 @@ Any files in a user's home directory must be owner/group of the user
         thanos
         ultron
 >run the script and ensure it works and has created the users/groups
+
 ### Task 7
 **Create a text file**
 >The file must reside in /home/student  
@@ -88,15 +89,14 @@ Any files in a user's home directory must be owner/group of the user
 
 ### Task 8
 **Create a text file**
->The file must reside in /home/student
->The file must be called second_disk.txt
-
+>The file must reside in /home/student  
+>The file must be called last.out  
+>The file must contain a list of dates/times of the historical reboots for the server
 ### Task 9
 **Create a text file**  
-***NOTE:***  
-You will run the following command as your starting point:  
-***getent group marvel|cut -d: -f4|tr , '\n'***   
-
+>***NOTE:*** You will run the following command as your starting point:  
+>***getent group marvel|cut -d: -f4|tr , '\n'***   
+>
 >File must be called marvel_tb_3.txt  
 >File must contain the top and bottom three users of the full sorted list  
 
