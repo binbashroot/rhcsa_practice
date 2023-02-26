@@ -19,7 +19,7 @@ Any files in a user's home directory must be owner/group of the user
 > Ensure SELinux enforcment is persistent across a reboot
 
 ### Task 2
-**Add the following repos to the system**
+**Add the following repos to the system**  
 **NOTE: REPLACE qnapbu.example.com with your local yum repo that is being served via httpd**
 > BaseOS 
 >> http://qnapbu.example.com/repo/BaseOS  
@@ -36,21 +36,21 @@ Any files in a user's home directory must be owner/group of the user
 ### Task 3
 **Filesystem** 
 >Create and mount a filesystem using your primary disk  
->Filesystem must be 850MiB in size
->Filesystem must use an ext3 filesytem
->Filesystem must be mounted on /mnt/task3
->Partition must be named task3
->The mount point must survive a reboot
+>Filesystem must be 850MiB in size  
+>Filesystem must use an ext3 filesytem  
+>Filesystem must be mounted on /mnt/task3  
+>Partition must be named task3  
+>The mount point must survive a reboot  
 
 ### Task 4
 **Create a script**
-> The script is called task4.sh
-> The script must create five files in /opt/dc  
+> The script is called task4.sh  
+> The script must create five files in /opt/dc    
 > The filenames are superman, batman, aquaman, flash, wonderwoman  
-> The script must reside in /opt/scripts
-> The file name extension must be ".out"
-> Each file must contain the current date and time
-> The script must only be executable by root
+> The script must reside in /opt/scripts  
+> The file name extension must be ".out"  
+> Each file must contain the current date and time  
+> The script must only be executable by root  
 
 ### Task 5
 **Create a script**
@@ -58,8 +58,8 @@ Any files in a user's home directory must be owner/group of the user
 >The script must reside in /opt/scripts  
 >The script must create five users  
 >All users must be part of the goodguys group  
->The script should only be executable by root
->All users must belong to the group named "marvel"
+>The script should only be executable by root  
+>All users must belong to the group named "marvel"  
 >> spiderman  
 >> wolverine  
 >> thor  
@@ -74,11 +74,11 @@ Any files in a user's home directory must be owner/group of the user
 >All users must be part of the badguys group  
 >The script should only be executable by root  
 >All users must belong to a secondary group named "marvel"  
-        sandman
-        sabertooth
-        loki
-        thanos
-        ultron
+>>sandman  
+>>sabertooth  
+>>loki  
+>>thanos  
+>>ultron  
 >run the script and ensure it works and has created the users/groups
 
 ### Task 7
@@ -136,6 +136,8 @@ Add a three new partitions to your secondary disk
 ### Task 14
 **Copy Files**
 >Copy all the files in the /opt/test1 dirs to a directory called /opt/copied  
+>Files must be owned by the directory owner
+>Files must belong to the group owned by the directory group 
 >>Files in /opt/copied must be readable by everyone  
 >>Files in /opt/copied must read/write by the owner  
 >>Files in /opt/copied must be read/write by the group  
