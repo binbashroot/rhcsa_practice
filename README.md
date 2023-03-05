@@ -28,10 +28,9 @@ Any files in a user's home directory must be owner/group of the user
 >> http://qnapbu.example.com/repo/AppStream  
 
 **Install a web server**
-> Install the httpd package on servera.example.com
-> The web services must survive a reboot
-> Validate your installation 
-
+> Install the httpd package on servera.example.com  
+> The web services must survive a reboot  
+> Validate via the following webpage http://servera.example.com/exam/
 
 ### Task 3
 **Filesystem** 
@@ -98,6 +97,7 @@ Any files in a user's home directory must be owner/group of the user
 >***getent group marvel|cut -d: -f4|tr , '\n'***   
 >
 >File must be called marvel_tb_3.txt  
+>File must reside in /home/student
 >File must contain the top and bottom three users of the full sorted list  
 
 ### Task 10
@@ -185,6 +185,14 @@ Add a three new partitions to your secondary disk
 >>
 
 ## Task 18
+**Serve httpd content via nfs files**
+
+> Mount the following nfs share
+> SOURCE: serverb.example.com:/share/webfiles
+> DEST: servera.example.com:/var/www/html/webfiles
+> Mount must survive a reboot
+> Mount must properly serve web files
+> You must be able to reach http://servera.example.com/webfiles/rhcsa.html
 
 ## Task 19
 **Mount static nfs share**
@@ -197,5 +205,14 @@ Add a three new partitions to your secondary disk
 **Create autofs mount**
 >Exported mount: serverb.example.com:/homes
 >Configure automount so share from serverb.example.com is mounted on /home/albert whenever albert logs in
+
+## Task 21
+**Configure httpd to use nfs**
+> Mount the exported from serverb.example.com to servera.example.com 
+> SOURCE:  serverb.example.com:/share/webfiles  
+> DESTINATION: servera.example.com:/var/www/html/task21  
+> The mount point on servera.example.com should persist across reboots  
+> The mount point should be read and writeable  
+> You must be able to see http://servera.example.com/task21/rhcsa.html  
 
 
