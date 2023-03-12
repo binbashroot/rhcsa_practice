@@ -7,7 +7,10 @@ Any files in a user's home directory must be owner/group of the user
 ### Task 1
 
 **Change IP**
->Change the IP address of servera to: **192.168.1.121**
+>Change the IP address of servera
+> IP: **192.168.1.121**
+> NETMASK: **255.255.255.0**
+> GATEWAY: **192.168.1.1**
 >This change must persist through reboots
 >
 **Change Hostname**
@@ -105,7 +108,7 @@ Any files in a user's home directory must be owner/group of the user
 >Create and mount a filesystem using your primary disk  
 >Filesystem must be 500MiB in size  
 >Filesystem must use an xfs filesytem  
->Filesystem must be mounted on /mnt/task4  
+>Filesystem must be mounted on /mnt/task10 
 >Partition must be named task10  
 >The mount point must survive a reboot  
 
@@ -122,10 +125,10 @@ Any files in a user's home directory must be owner/group of the user
 >The owner of the folder should be root  
 >The group of the folder should be villians  
 >The permissions of the folder should only allow root and users in the badguys group access to read/write files.  
->The root user and users must be able to list files but all other users should not be able to list the contents of the /opt/villians directory
+>The root user and users in the badguys group must be able to list files but all other users should not be able to list the contents of the /opt/villians directory
 
 ### Task 13
-Add a three new partitions to your secondary disk
+Add a two new partitions to your secondary disk
 >One partition must be 500MiB in size  
 >One partition must be 250MiB in size  
 >The partition that is 250MiB should have an ext3 filesystem  
@@ -208,11 +211,22 @@ Add a three new partitions to your secondary disk
 
 ## Task 21
 **Configure httpd to use nfs**
-> Mount the exported from serverb.example.com to servera.example.com 
+> Mount the following nfs share on servera.example.com
 > SOURCE:  serverb.example.com:/share/webfiles  
-> DESTINATION: servera.example.com:/var/www/html/task21  
+> DESTINATION: servera.example.com:/var/www/html/rhcsa
 > The mount point on servera.example.com should persist across reboots  
 > The mount point should be read and writeable  
-> You must be able to see http://servera.example.com/task21/rhcsa.html  
+> You must be able to see http://servera.example.com/rhcsa/index.html  
 
+## Task 22
+**Configure a directory to be used by multiple teams**
+> Create the /opt/marvel_users directory
+> THe directory should be owned by student
+> The group should be owned by marvel
+> Any file put into this folder should always be owned by the marvel group.
 
+## Task 23
+**Configure httpd to listen on port 8888**
+> Modify /etc/httpd/conf/httpd.conf to listen on port 8888
+> Restart the httpd service and troubleshoot the issue
+> You must be able to see http://servera.example.com:8888/rhcsa/index.html  
