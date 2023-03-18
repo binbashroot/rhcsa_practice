@@ -56,12 +56,12 @@ Any files in a user's home directory must be owner/group of the user
 
 ### Task 5
 **Create a script**
->The script is named task5.sh   
->The script must reside in /opt/scripts  
->The script must create five users  
->All users must be part of the goodguys group  
->The script should only be executable by root  
->All users must belong to the group named "marvel"  
+> The script is named task5.sh   
+> The script must reside in /opt/scripts  
+> The script must create five users  
+> All users must be part of the goodguys group  
+> The script should only be executable by root  
+> All users must belong to the group named "marvel"  
 >> spiderman  
 >> wolverine  
 >> thor  
@@ -70,18 +70,18 @@ Any files in a user's home directory must be owner/group of the user
 
 ### Task 6
 **Create a script**
->The script is named task6.sh  
->The script must reside in /opt/scripts  
->The script must create five users  
->All users must be part of the badguys group  
->The script should only be executable by root  
->All users must belong to a secondary group named "marvel"  
->>sandman  
->>sabertooth  
->>loki  
->>thanos  
->>ultron  
->run the script and ensure it works and has created the users/groups
+> The script is named task6.sh  
+> The script must reside in /opt/scripts  
+> The script must create five users  
+> All users must be part of the badguys group  
+> The script should only be executable by root  
+> All users must belong to a secondary group named "marvel"  
+>> sandman  
+>> sabertooth  
+>> loki  
+>> thanos  
+>> ultron  
+> run the script and ensure it works and has created the users/groups
 
 ### Task 7
 **Create a text file**
@@ -166,7 +166,7 @@ Add a two new partitions to your secondary disk
 
 ### Task 16
 **Find Files**
->Find all files owned by albert and copy them to a folder called /tmp/task17_files
+>Find all files owned by larry and copy them to a folder called /tmp/task17_files
 
 ### Task 17
 **Chrony**
@@ -175,10 +175,10 @@ Add a two new partitions to your secondary disk
 
 ### Task 18
 **Logical volumes**
->On serverb.example.com
->>Using /dev/sdb do the following:
->>>Create a 1G partition  
->>>Create a 500M logical volume 500M that belongs to the rhcsavg volume group  
+> On serverb.example.com
+>> Using /dev/sdb do the following:
+>>> Create a 1G partition  
+>>> Create a 500M logical volume 500M that belongs to the rhcsavg volume group  
 >>>
 
 **Swap**
@@ -188,45 +188,43 @@ Add a two new partitions to your secondary disk
 >>
 
 ## Task 18
-**Serve httpd content via nfs files**
-
-> Mount the following nfs share
-> SOURCE: serverb.example.com:/share/webfiles
-> DEST: servera.example.com:/var/www/html/webfiles
-> Mount must survive a reboot
-> Mount must properly serve web files
-> You must be able to reach http://servera.example.com/webfiles/rhcsa.html
+**Configure nfs to mount user home directories automatically**
+> The following three users larry, moe, and curly must be able to automatically mount their shared directories
+> from serverb.example.com whenever they log into servera.example.com
 
 ## Task 19
-**Mount static nfs share**
-> Mount the exported share from serverb.example.com to servera.example.com
-> The mount point on servera.example.com should be /mnt/share
-> The mount point on servera.example.com should persist across reboots
-> The mount point should be read and writeable
+**Configure httpd to use nfs**
+> SOURCE: serverb.example.com:/webfiles
+> DESTINATION HOST: servera.example.com
+> The mount point on the destination host should /var/www/html/rhcsa
+> The mount point on the destination host should persist across reboots
+> You must be able to see http://servera.example.com/rhcsa/index.html  
 
 ## Task 20
-**Create autofs mount**
->Exported mount: serverb.example.com:/homes
->Configure automount so share from serverb.example.com is mounted on /home/albert whenever albert logs in
+**Create mount as an indirect autofs mount**
+> Configure servera.example.com to mount files from serverb.example.com:/share/data to /shares/data whenever someone enters the /shares/data directory
 
 ## Task 21
-**Configure httpd to use nfs**
+**Create mount as an direct autofs mount**
 > Mount the following nfs share on servera.example.com
-> SOURCE:  serverb.example.com:/share/webfiles  
-> DESTINATION: servera.example.com:/var/www/html/rhcsa
-> The mount point on servera.example.com should persist across reboots  
-> The mount point should be read and writeable  
-> You must be able to see http://servera.example.com/rhcsa/index.html  
+> SOURCE:  serverb.example.com:/share/data2
+> Configure servera.example.com to mount files from serverb.example.com:/share/data2 to /data2
+> whenever /data2 is accessed
 
 ## Task 22
 **Configure a directory to be used by multiple teams**
-> Create the /opt/marvel_users directory
+> Create the /opt/marvel directory
 > THe directory should be owned by student
 > The group should be owned by marvel
-> Any file put into this folder should always be owned by the marvel group.
+> Any created, copied, or moved to /opt/marvel should become automatically be owned by the marvel group.
 
 ## Task 23
 **Configure httpd to listen on port 8888**
-> Modify /etc/httpd/conf/httpd.conf to listen on port 8888
-> Restart the httpd service and troubleshoot the issue
-> You must be able to see http://servera.example.com:8888/rhcsa/index.html  
+> Modify apache webserver to listen on port 8888
+> Restart the httpd service
+> You must be able to see http://servera.example.com:8888/exam/index.html  
+
+## Task 24
+**Install and Configure Time Sync Software**
+> Configure servera as a time sync client to 192.168.1.122
+
